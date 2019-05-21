@@ -1,0 +1,4 @@
+<%@string = ''%>
+<%@params.each {|k,v| @string += v + " "}%>
+<%@string[-1] = "."%>
+<%=@string%>
