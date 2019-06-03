@@ -11,11 +11,17 @@ class App < Sinatra::Base
   end
 
   get '/say/:number/:phrase' do
-    finished_str = ""
+    final_str = ""
     @number = params[:number].to_i
     @phrase = params[:phrase]
-    @number.times { finished_str += "#{params[:phrase]}\n" }
-    finished_str
+    @number.times { final_str += "#{params[:phrase]}\n" }
+    final_str
+  end
+
+  get '/say/:word1/:word2/:word3/:word4/:word5' do
+    final_str = "#{params[:word1]} #{params[:word2]} #{params[:word3]} #{params[:word4]} #{params[:word5]}."
+    final_str
+    # need better way of doing above - through iteration?
   end
 
 end
