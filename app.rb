@@ -24,4 +24,16 @@ class App < Sinatra::Base
     # need better way of doing above - through iteration?
   end
 
+  get '/:operation/:number1/:number2' do
+    if params[:operation] == "add"
+      (params[:number1].to_i+params[:number2].to_i).to_s
+    elsif params[:operation] == "subtract"
+      (params[:number1].to_i-params[:number2].to_i).to_s
+    elsif params[:operation] == "multiply"
+      (params[:number1].to_i*params[:number2].to_i).to_s
+    elsif params[:operation] == "divide"
+      (params[:number1].to_i/params[:number2].to_i).to_s
+    end
+  end
+
 end
